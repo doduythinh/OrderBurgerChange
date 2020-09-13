@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-    import  { connect } from 'react-redux';
+import  { connect } from 'react-redux';
 
 import Input from '../../Component/UI/Input/Input';
 import Button from '../../Component/UI/Button/Button';
@@ -114,12 +114,12 @@ class Auth extends  Component {
         }
 
         return (
-            <div className="Auth">
+            <div className={classes.Auth}>
                 {authRedirect}
                 {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
-                    <Button ư btnType="Success">SUBMIT</Button>
+                    <Button  btnType="Success">SUBMIT</Button>
                 </form>
                 <Button
                     clicked={this.switchAuthModeHandler}
@@ -142,8 +142,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password,isSignup)),
-      onAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/'))
+        onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password,isSignup)),
+        onAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/'))
 
     };
 

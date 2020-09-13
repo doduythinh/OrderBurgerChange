@@ -26,14 +26,14 @@ class Checkout extends Component {
             summary = (
                 <div>
                     {purchasedRedirect}
-                <CheckoutSummary
-                ingredients={this.props.ings}
-                checkoutCancelled={this.checkoutCancelledHandler}
-                checkoutContinued={this.checkoutContinuedHandler} />,
-            <Route path={this.props.match.path + '/contact-data'} exact
-                   component={ContactData}  />
+                    <CheckoutSummary
+                        ingredients={this.props.ings}
+                        checkoutCancelled={this.checkoutCancelledHandler}
+                        checkoutContinued={this.checkoutContinuedHandler} />,
+                    <Route path={this.props.match.path + '/contact-data'} exact
+                           component={ContactData}  />
                 </div>
-                   );
+            );
         }
         return summary;
     }

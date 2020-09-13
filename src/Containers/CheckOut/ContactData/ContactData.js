@@ -142,9 +142,9 @@ class ContactData extends Component{
         for(let key in this.state.orderForm)
         {
             formElementsArray.push({
-                    id: key,
-                    config: this.state.orderForm[key]
-                })
+                id: key,
+                config: this.state.orderForm[key]
+            })
         }
         let form = (
             <form onSubmit={this.orderHandler}>
@@ -159,7 +159,7 @@ class ContactData extends Component{
                         touced={formElement.config.touched}
                         changed={(event) =>this.inputChangedHandler(event,formElement.id)}
                     />
-                    ))}
+                ))}
                 <Button btnType="Success" clicked={this.orderHandler}>OrDer</Button>
             </form>
         );
@@ -168,7 +168,7 @@ class ContactData extends Component{
             form = <Spinner />;
         }
         return(
-            <div className="ContactData">
+            <div className={classes.ContactData}>
                 <h4>Enter your Contact Data</h4>
                 {form}
             </div>
